@@ -3,7 +3,7 @@ import { RadioBotones } from "./InputBtn.jsx"
 
 export const CuadroConteo = ()=>{
     return(
-    <>
+    <form action="">
         <table>
             <thead>
                 <tr>
@@ -42,6 +42,7 @@ export const CuadroConteo = ()=>{
             </tbody>
         </table>
         <BotonCalcular />
-    </>
+        </form>
+    
     )
 }
