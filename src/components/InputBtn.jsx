@@ -15,7 +15,7 @@ export const RadioBotones = ({valorSimple,valorPromedio,valorComplejo})=>{
 }
 
 
-export const BotonValor = () => {
+export const OpcionNum = () => {
     let elementos = [];
 
     for (var i = 0; i < 6; i++){
@@ -27,5 +27,9 @@ export const BotonValor = () => {
         );
     }
 
-    return elementos;
+    return(
+        <form>
+            {elementos}
+        </form>
+    )
 }
