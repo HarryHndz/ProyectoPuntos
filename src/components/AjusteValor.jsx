@@ -1,10 +1,10 @@
-import { botonValor } from "./InputBtn.jsx"
+import { BotonValor } from "./InputBtn.jsx"
 
 export const Formulario = () => {
     return (
         <form>
             <label>Holi</label>
-            <botonValor></botonValor>
+            <BotonValor></BotonValor>
         </form>
     )
     

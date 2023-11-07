@@ -14,16 +14,18 @@ export const RadioBotones = ({valorSimple,valorPromedio,valorComplejo})=>{
     )
 }
 
-export const botonValor = () => {
+
+export const BotonValor = () => {
+    let elementos = [];
 
     for (var i = 0; i < 6; i++){
-        return (
-            <form>
+        elementos.push(
+            <div>
                 <input type="radio" name="valor" value={i} />
-                <label htmlFor={i}></label>
-            </form>
-        )
+                <label htmlFor={i}>{i}</label>
+            </div>
+        );
     }
-        
-    
+
+    return elementos;
 }
