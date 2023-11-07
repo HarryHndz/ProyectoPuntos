@@ -11,6 +11,5 @@ export const RadioBotones = ({valorSimple,valorPromedio,valorComplejo})=>{
             <label htmlFor={valorComplejo}>{valorComplejo}</label>
         </form>
 
-        
     )
 }
