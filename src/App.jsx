@@ -1,13 +1,11 @@
-import { useState } from 'react'
+import { CuadroConteo } from './components/ConteoTotal.jsx'
 
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1>Hola mundo</h1>
+    <CuadroConteo></CuadroConteo>
     </>
   )
 }
