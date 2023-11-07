@@ -1,10 +1,21 @@
 import { BotonCalcular } from "./Boton.jsx"
 import { RadioBotones } from "./InputBtn.jsx"
+import { useState } from "react"
+
+
+
+const [suma,setSuma] = useState('')
+
+
+export const calcularValorDominio = () => {
+    
+}
+
 
 export const CuadroConteo = ()=>{
     return(
     <form action="">
-        <table>
+        <table className="">
             <thead>
                 <tr>
                     <th>Valor dominio de información</th>
