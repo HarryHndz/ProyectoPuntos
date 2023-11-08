@@ -1,5 +1,5 @@
 export const BotonCalcular = ()=>{
     return(
-        <button type="submit">Calcular</button>
+        <button type="submit" onClick={()=>{}}>Calcular</button>
     )
 }
