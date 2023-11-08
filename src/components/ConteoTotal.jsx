@@ -26,6 +26,8 @@ export const CuadroConteo = ()=>{
         setAie(event.target.value)
     }
 
+    
+
     return(
     <form action="">
         <table className="">
@@ -65,12 +67,8 @@ export const CuadroConteo = ()=>{
                 </tr>
             </tbody>
         </table>
-        <BotonCalcular />
-        <p>{ee}</p>
-        <p>{se}</p>
-        <p>{ce}</p>
-        <p>{ali}</p>
-        <p>{aie}</p>
+        <p>{ee},{se},{ce},{ali},{aie}</p>
+        <button type="submit">Calcular</button>
         </form>
     
     )
