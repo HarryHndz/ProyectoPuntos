@@ -28,7 +28,7 @@ export const CuadroConteo = ()=>{
 
     return(
 
-    <form action="" onSubmit={calcularResultado}>
+    <form action="">
         <table className="">
             <thead>
                 <tr>
@@ -42,12 +42,12 @@ export const CuadroConteo = ()=>{
                 <tr>
                     <td>Entradas externas (EE)</td>
                     <td><input type="number" name="conteo_ee" onChange={conteoEe}  /></td>
-                    <td><RadioBotones valorSimple={3} valorPromedio={4} valorComplejo={6}  setValor={setValor1} /></td>
+                    <td><RadioBotones valorSimple={3} valorPromedio={4} valorComplejo={6} /></td>
                 </tr>
                 <tr>
                     <td>Salidas externas (SE)</td>
                     <td><input type="number" name="conteo_se" onChange={conteoSe} /></td>
-                    <td><RadioBotones valorSimple={4} valorPromedio={5} valorComplejo={7}  setValor={setValor2} /></td>
+                    <td><RadioBotones valorSimple={4} valorPromedio={5} valorComplejo={7} /></td>
                 </tr>
                 <tr>
                     <td>Consultas externas (CE)</td>

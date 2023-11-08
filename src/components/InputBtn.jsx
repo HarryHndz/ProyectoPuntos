@@ -19,13 +19,13 @@ export const RadioBotones = ({valorSimple,valorPromedio,valorComplejo})=>{
     return(
         <>
         <form>
-            <input type="radio" name="factor_ponderado_ee" onChange={radioSimple} value={valorSimple} />
+            <input type="radio" name="factor_ponderado_ee" onChange={radioSimple} />
             <label htmlFor={valorSimple}>{valorSimple}</label>
 
-            <input type="radio" name="factor_ponderado_ee" onChange={radioPromedio} value={valorPromedio} />
+            <input type="radio" name="factor_ponderado_ee" onChange={radioPromedio} />
             <label htmlFor={valorPromedio}>{valorPromedio}</label>
 
-            <input type="radio" name="factor_ponderado_ee" onChange={radioComplejo} value={valorComplejo} />
+            <input type="radio" name="factor_ponderado_ee" onChange={radioComplejo} />
             <label htmlFor={valorComplejo}>{valorComplejo}</label>
         </form>
         <p>{simple},{promedio},{complejo}</p>
