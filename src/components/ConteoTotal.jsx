@@ -1,4 +1,3 @@
-import { BotonCalcular } from "./Boton.jsx"
 import { RadioBotones } from "./InputBtn.jsx"
 import { useState } from "react"
 
@@ -9,6 +8,7 @@ export const CuadroConteo = ()=>{
     const [ce,setCe] = useState(0)
     const [ali,setAli] = useState(0)
     const [aie,setAie] = useState(0)
+
 
     const conteoEe = (event) => {
         setEe(event.target.value)
@@ -26,10 +26,9 @@ export const CuadroConteo = ()=>{
         setAie(event.target.value)
     }
 
-    
-
     return(
-    <form action="">
+
+    <form action="" onSubmit={calcularResultado}>
         <table className="">
             <thead>
                 <tr>
@@ -43,12 +42,12 @@ export const CuadroConteo = ()=>{
                 <tr>
                     <td>Entradas externas (EE)</td>
                     <td><input type="number" name="conteo_ee" onChange={conteoEe}  /></td>
-                    <td><RadioBotones valorSimple={3} valorPromedio={4} valorComplejo={6} /></td>
+                    <td><RadioBotones valorSimple={3} valorPromedio={4} valorComplejo={6}  setValor={setValor1} /></td>
                 </tr>
                 <tr>
                     <td>Salidas externas (SE)</td>
                     <td><input type="number" name="conteo_se" onChange={conteoSe} /></td>
-                    <td><RadioBotones valorSimple={4} valorPromedio={5} valorComplejo={7}  /></td>
+                    <td><RadioBotones valorSimple={4} valorPromedio={5} valorComplejo={7}  setValor={setValor2} /></td>
                 </tr>
                 <tr>
                     <td>Consultas externas (CE)</td>
@@ -69,7 +68,8 @@ export const CuadroConteo = ()=>{
         </table>
         <p>{ee},{se},{ce},{ali},{aie}</p>
         <button type="submit">Calcular</button>
-        </form>
-    
+    </form>
+
+
     )
 }
