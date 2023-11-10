@@ -1,75 +1,67 @@
-import { RadioBotones } from "./InputBtn.jsx"
 import { useState } from "react"
 
 
 export const CuadroConteo = ()=>{
-    const [ee,setEe] = useState(0)
-    const [se,setSe] = useState(0)
-    const [ce,setCe] = useState(0)
-    const [ali,setAli] = useState(0)
-    const [aie,setAie] = useState(0)
+    const [total, setTotal] = useState(0)
 
-
-    const conteoEe = (event) => {
-        setEe(event.target.value)
+    const calcularConteo = (ponderado,ee,se,ce,ali,aie)=>{
+        const sumaConteo = ee+se+ce+ali+aie 
+        let ResultadoFinal
+        if(ponderado ==='simple'){
+             ResultadoFinal = sumaConteo * 3
+    
+        }else if(ponderado ==='promedio'){
+             ResultadoFinal = sumaConteo * 6
+            
+        }else if(ponderado ==='complejo'){
+             ResultadoFinal = sumaConteo *9
+    
+        }
+        setTotal(ResultadoFinal)
+        return ResultadoFinal
+    
     }
-    const conteoSe = (event) => {
-        setSe(event.target.value)
-    }
-    const conteoCe = (event) => {
-        setCe(event.target.value)
-    }
-    const conteoAli = (event) => {
-        setAli(event.target.value)
-    }
-    const conteoAie = (event) => {
-        setAie(event.target.value)
-    }
-
     return(
+        <>
+        <form onSubmit={ev =>{
+            ev.preventDefault();
+            const FactorPond = ev.target.factor_ponderado.value
+            const EntradaEx = Number(ev.target.conteo_ee.value)
+            const salidaEx = Number(ev.target.conteo_se.value)
+            const ConsultaEx = Number(ev.target.conteo_ce.value)
+            const ArchLin = Number(ev.target.conteo_ali.value)
+            const ArchLEX = Number(ev.target.conteo_aie.value)
+            calcularConteo(FactorPond,EntradaEx,salidaEx,ConsultaEx,ArchLin,ArchLEX)
+            
+        }}>
+            <select name="factor_ponderado">
+                <option value="simple">Simple</option>
+                <option value="promedio">Promedio</option>
+                <option value="complejo">Complejo</option>
+            </select>
 
-    <form action="">
-        <table className="">
-            <thead>
-                <tr>
-                    <th>Valor dominio de información</th>
-                    <th>Conteo</th>
-                    <th>Factor ponderado<br/>
-                    simple promedio complejo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Entradas externas (EE)</td>
-                    <td><input type="number" name="conteo_ee" onChange={conteoEe}  /></td>
-                    <td><RadioBotones valorSimple={3} valorPromedio={4} valorComplejo={6} /></td>
-                </tr>
-                <tr>
-                    <td>Salidas externas (SE)</td>
-                    <td><input type="number" name="conteo_se" onChange={conteoSe} /></td>
-                    <td><RadioBotones valorSimple={4} valorPromedio={5} valorComplejo={7} /></td>
-                </tr>
-                <tr>
-                    <td>Consultas externas (CE)</td>
-                    <td><input type="number" name="conteo_ce" onChange={conteoCe} /></td>
-                    <td><RadioBotones valorSimple={3} valorPromedio={4} valorComplejo={6} /></td>
-                </tr>
-                <tr>
-                    <td>Archivos lógicos internos (ALI)</td>
-                    <td><input type="number" name="conteo_ali" onChange={conteoAli}  /></td>
-                    <td><RadioBotones valorSimple={7} valorPromedio={10} valorComplejo={15} /></td>
-                </tr>
-                <tr>
-                    <td>Archivos de interfaz externos (AIE)</td>
-                    <td><input type="number" name="conteo_aie" onChange={conteoAie}  /></td>
-                    <td><RadioBotones valorSimple={5} valorPromedio={7} valorComplejo={10} /></td>
-                </tr>
-            </tbody>
-        </table>
-        <p>{ee},{se},{ce},{ali},{aie}</p>
-        <button type="submit">Calcular</button>
-    </form>
+            <label htmlFor="">Entradas Externas (EE)</label>
+            <input type="number" name="conteo_ee"/>
 
+            <label htmlFor="">Salidas Externas (SE)</label>
+            <input type="number" name="conteo_se"/>
 
+            <label htmlFor="">Consultas Externas (CE)</label>
+            <input type="number" name="conteo_ce"/>
+
+            <label htmlFor="">Archivos Logicos Internos (ALI)</label>
+            <input type="number" name="conteo_ali"/>
+
+            <label htmlFor="">Archivos de Interfaz Externo (AIE)</label>
+            <input type="number" name="conteo_aie"/>
+
+            <button type="submit">Calcular</button>
+
+        </form>
+        <p>{total}</p>
+        
+        </>
     )
+
 }
+

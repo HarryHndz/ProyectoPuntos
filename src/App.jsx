@@ -1,12 +1,12 @@
-import { CuadroConteo } from './components/ConteoTotal.jsx'
 import { Formulario } from './components/AjusteValor.jsx'
+import { CuadroConteo } from './components/ConteoTotal.jsx'
 
 function App() {
 
   return (
     <>
-    <CuadroConteo />
-    <Formulario />
+      <CuadroConteo />
+      <Formulario />
     </>
   )
 }
