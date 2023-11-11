@@ -1,7 +1,35 @@
+import { useState } from "react"
 
-export const Formulario = () => {
+export const Formulario = ({onResultChange2}) => {
+    
+    const [sum2,setSum2] = useState(0)
+
+    const sumaPreguntas = (n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14)=>{
+        const sumaFinal2= n1+n2+n3+n4+n5+n6+n7+n8+n9+n10+n11+n12+n13+n14
+        setSum2(sumaFinal2)
+        onResultChange2(sumaFinal2)
+    }
+
     return (
-        <form>
+        <>
+        <form onSubmit={ev=>{
+            ev.preventDefault();
+            const p1 = Number(ev.target.p1.value)
+            const p2 = Number(ev.target.p2.value)
+            const p3 = Number(ev.target.p3.value)
+            const p4 = Number(ev.target.p4.value)
+            const p5 = Number(ev.target.p5.value)
+            const p6 = Number(ev.target.p6.value)
+            const p7 = Number(ev.target.p7.value)
+            const p8 = Number(ev.target.p8.value)
+            const p9 = Number(ev.target.p9.value)
+            const p10 = Number(ev.target.p10.value)
+            const p11 = Number(ev.target.p11.value)
+            const p12 = Number(ev.target.p12.value)
+            const p13 = Number(ev.target.p13.value)
+            const p14 = Number(ev.target.p14.value)
+            sumaPreguntas(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14)
+        }}>
             <label>1. ¿El sistema requiere respaldo y recuperación confiables?</label>
             <input type="number" name="p1" />
             <br />
@@ -50,8 +78,10 @@ export const Formulario = () => {
             <label>14. ¿La aplicación se diseña para facilitar el cambio y su 
             uso por parte del usuario?</label>
             <input type="number" name="p14" />
-
+        <button type="submit">Calcular</button>
         </form>
+        <p>{sum2}</p>
+        </>
     )
     
 }

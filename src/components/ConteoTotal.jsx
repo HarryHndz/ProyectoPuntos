@@ -1,7 +1,6 @@
 import { useState } from "react"
 
-
-export const CuadroConteo = ()=>{
+export const CuadroConteo = ({onResultChange })=>{
     const [total, setTotal] = useState(0)
 
     const calcularConteo = (ponderado,ee,se,ce,ali,aie)=>{
@@ -12,13 +11,12 @@ export const CuadroConteo = ()=>{
     
         }else if(ponderado ==='promedio'){
              ResultadoFinal = sumaConteo * 6
-            
-        }else if(ponderado ==='complejo'){
+        }else if(ponderado ==='promedio'){
              ResultadoFinal = sumaConteo *9
     
         }
         setTotal(ResultadoFinal)
-        return ResultadoFinal
+        onResultChange(ResultadoFinal)
     
     }
     return(
@@ -56,10 +54,8 @@ export const CuadroConteo = ()=>{
             <input type="number" name="conteo_aie"/>
 
             <button type="submit">Calcular</button>
-
         </form>
         <p>{total}</p>
-        
         </>
     )
 
