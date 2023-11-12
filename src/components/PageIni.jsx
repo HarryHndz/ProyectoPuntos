@@ -8,15 +8,26 @@ export const PaginaIincio = ()=>{
         setMostrar(true)
     }
 
+    const volverInicio = ()=>{
+        setMostrar(false)
+    }
 
-    return(
+    return (
         <div>
-            <h1>Conoce el valor de tu software</h1>
-            <h2>Bienvenido aqui podras conocer el tamaño de la funcionalidad de tu software</h2>
-            <p>¿Como calculamos o expresemanos este resultado?</p>
-            <p>Se calcula a través de una suma ponderada de las caracteristicas del producto</p>
-            <button>Comenzar</button>
+            {mostrar ? (
+            <>
+            <ResultadoForm />
+            <button onClick={volverInicio}>Volver</button>
+            </>
+        ) : (
+            <div>
+                <h1>Conoce el valor de tu software</h1>
+                <h2>Bienvenido aquí podrás conocer el tamaño de la funcionalidad de tu software</h2>
+                <p>¿Cómo calculamos o expresamos este resultado?</p>
+                <p>Se calcula a través de una suma ponderada de las características del producto</p>
+                <button onClick={mostrarFormulario}>Comenzar</button>
+            </div>
+            )}
         </div>
     )
-
 }
