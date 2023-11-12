@@ -32,28 +32,63 @@ export const CuadroConteo = ({onResultChange })=>{
             calcularConteo(FactorPond,EntradaEx,salidaEx,ConsultaEx,ArchLin,ArchLEX)
             
         }}>
+
+            <table>
+                
+                <tr>
+                    <th>Valor dominio de informacion</th>
+                    <th>Conteo</th>
+                    <th>Simple</th>
+                    <th>Promedio</th>
+                    <th>Compeljo</th>
+                </tr>
+                <tr>
+                    <td><label htmlFor="">Entradas Externas (EE)</label></td>
+                    <td><input type="number" name="conteo_ee"/></td>
+                    <td><input type="radio" name="radio_ee" value="3"/></td>
+                    <td><input type="radio" name="radio_ee" value="4"/></td>
+                    <td><input type="radio" name="radio_ee" value="6"/></td>
+                </tr>
+                <tr>
+                    <td><label htmlFor="">Salidas Externas (SE)</label></td>
+                    <td><input type="number" name="conteo_se"/></td>
+                    <td><input type="radio" name="radio_se" value="4"/></td>
+                    <td><input type="radio" name="radio_se" value="5"/></td>
+                    <td><input type="radio" name="radio_se" value="7"/></td>
+                </tr>
+                <tr>
+                    <td><label htmlFor="">Consultas Externas (CE)</label></td>
+                    <td><input type="number" name="conteo_ce"/></td>
+                    <td><input type="radio" name="radio_ce" value="3"/></td>
+                    <td><input type="radio" name="radio_ce" value="4"/></td>
+                    <td><input type="radio" name="radio_ce" value="6"/></td>
+                </tr>
+                <tr>
+                    <td><label htmlFor="">Archivos Logicos Internos (ALI)</label></td>
+                    <td><input type="number" name="conteo_ali"/></td>
+                    <td><input type="radio" name="radio_ali" value="7"/></td>
+                    <td><input type="radio" name="radio_ali" value="10"/></td>
+                    <td><input type="radio" name="radio_ali" value="15"/></td>
+                </tr>
+                <tr>
+                    <td><label htmlFor="">Archivos de Interfaz Externo (AIE)</label></td>
+                    <td><input type="number" name="conteo_aie"/></td>
+                    <td><input type="radio" name="radio_aie" value="5"/></td>
+                    <td><input type="radio" name="radio_aie" value="7"/></td>
+                    <td><input type="radio" name="radio_aie" value="10"/></td>
+                </tr>
+                <tr>
+                    <td coldspan="5"><button type="submit">Calcular</button></td>
+                </tr>
+            </table>
+
             <select name="factor_ponderado">
                 <option value="simple">Simple</option>
                 <option value="promedio">Promedio</option>
                 <option value="complejo">Complejo</option>
             </select>
 
-            <label htmlFor="">Entradas Externas (EE)</label>
-            <input type="number" name="conteo_ee"/>
-
-            <label htmlFor="">Salidas Externas (SE)</label>
-            <input type="number" name="conteo_se"/>
-
-            <label htmlFor="">Consultas Externas (CE)</label>
-            <input type="number" name="conteo_ce"/>
-
-            <label htmlFor="">Archivos Logicos Internos (ALI)</label>
-            <input type="number" name="conteo_ali"/>
-
-            <label htmlFor="">Archivos de Interfaz Externo (AIE)</label>
-            <input type="number" name="conteo_aie"/>
-
-            <button type="submit">Calcular</button>
+            
         </form>
         <p>{total}</p>
         </>
