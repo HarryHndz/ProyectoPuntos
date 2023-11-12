@@ -3,33 +3,35 @@ import { useState } from "react"
 export const CuadroConteo = ({onResultChange })=>{
     const [total, setTotal] = useState(0)
 
-    const calcularConteo = (ponderado,ee,se,ce,ali,aie)=>{
+    const calcularConteo = (ee,se,ce,ali,aie)=>{
         const sumaConteo = ee+se+ce+ali+aie 
-        let ResultadoFinal
+        //let ResultadoFinal
+        /*
         if(ponderado ==='simple'){
              ResultadoFinal = sumaConteo * 3
-    
+
         }else if(ponderado ==='promedio'){
              ResultadoFinal = sumaConteo * 6
         }else if(ponderado ==='promedio'){
              ResultadoFinal = sumaConteo *9
     
         }
-        setTotal(ResultadoFinal)
-        onResultChange(ResultadoFinal)
+        */
+        setTotal(sumaConteo)
+        onResultChange(sumaConteo)
     
     }
     return(
         <>
         <form onSubmit={ev =>{
             ev.preventDefault();
-            const FactorPond = ev.target.factor_ponderado.value
-            const EntradaEx = Number(ev.target.conteo_ee.value)
-            const salidaEx = Number(ev.target.conteo_se.value)
-            const ConsultaEx = Number(ev.target.conteo_ce.value)
-            const ArchLin = Number(ev.target.conteo_ali.value)
-            const ArchLEX = Number(ev.target.conteo_aie.value)
-            calcularConteo(FactorPond,EntradaEx,salidaEx,ConsultaEx,ArchLin,ArchLEX)
+            /*const FactorPond = ev.target.factor_ponderado.value*/
+            const EntradaEx = Number(ev.target.conteo_ee.value) * Number(ev.target.radio_ee.value)
+            const salidaEx = Number(ev.target.conteo_se.value) * Number(ev.target.radio_se.value)
+            const ConsultaEx = Number(ev.target.conteo_ce.value) * Number(ev.target.radio_ce.value)
+            const ArchLin = Number(ev.target.conteo_ali.value) * Number(ev.target.radio_ali.value)
+            const ArchLEX = Number(ev.target.conteo_aie.value) * Number(ev.target.radio_aie.value)
+            calcularConteo(EntradaEx,salidaEx,ConsultaEx,ArchLin,ArchLEX)
             
         }}>
 
