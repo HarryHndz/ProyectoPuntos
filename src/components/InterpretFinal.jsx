@@ -22,23 +22,21 @@ export const ResultadoForm = ()=>{
         setResultadoFin(Pfa)
     }
 
+    //
+    const [siguiente,setSiguiente] = useState(false)
+
+    const handleSiguiente = ()=>{
+        setSiguiente(true)
+    }
     return(
-        <div>
+        <>
             <CuadroConteo onResultChange={handleResultChange}></CuadroConteo>
-            
             <Formulario onResultChange2={handleResultChange2}></Formulario>
-
-            <p>El del cuadro</p>
-            <p>{cuadro}</p>
-
-            <p>El del formulario</p>
-            <p>{formulario}</p>
-
             <div>
                 <p>¿Deseas obtener el valor total?</p>
                 <button onClick={FinalResul}>calculalo perro</button>
                 <p>{resultadoFin}</p>
             </div>
-        </div>
+        </>
     )
 }

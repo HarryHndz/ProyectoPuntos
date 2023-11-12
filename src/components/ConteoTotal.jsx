@@ -5,18 +5,6 @@ export const CuadroConteo = ({onResultChange })=>{
 
     const calcularConteo = (ee,se,ce,ali,aie)=>{
         const sumaConteo = ee+se+ce+ali+aie 
-        //let ResultadoFinal
-        /*
-        if(ponderado ==='simple'){
-             ResultadoFinal = sumaConteo * 3
-
-        }else if(ponderado ==='promedio'){
-             ResultadoFinal = sumaConteo * 6
-        }else if(ponderado ==='promedio'){
-             ResultadoFinal = sumaConteo *9
-    
-        }
-        */
         setTotal(sumaConteo)
         onResultChange(sumaConteo)
     
@@ -25,7 +13,7 @@ export const CuadroConteo = ({onResultChange })=>{
         <>
         <form onSubmit={ev =>{
             ev.preventDefault();
-            /*const FactorPond = ev.target.factor_ponderado.value*/
+
             const EntradaEx = Number(ev.target.conteo_ee.value) * Number(ev.target.radio_ee.value)
             const salidaEx = Number(ev.target.conteo_se.value) * Number(ev.target.radio_se.value)
             const ConsultaEx = Number(ev.target.conteo_ce.value) * Number(ev.target.radio_ce.value)
@@ -83,14 +71,6 @@ export const CuadroConteo = ({onResultChange })=>{
                     <td coldspan="5"><button type="submit">Calcular</button></td>
                 </tr>
             </table>
-
-            <select name="factor_ponderado">
-                <option value="simple">Simple</option>
-                <option value="promedio">Promedio</option>
-                <option value="complejo">Complejo</option>
-            </select>
-
-            
         </form>
         <p>{total}</p>
         </>

@@ -1,10 +1,12 @@
-import { ResultadoForm } from "./components/InterpretFinal.jsx"
+//import { ResultadoForm } from "./components/InterpretFinal.jsx"
+
+import { PaginaIincio } from "./components/PageIni"
 
 function App() {
 
   return (
     <>
-    <ResultadoForm></ResultadoForm>
+      <PaginaIincio></PaginaIincio>
     </>
   )
 }
