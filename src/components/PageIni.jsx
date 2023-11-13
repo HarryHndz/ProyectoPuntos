@@ -1,3 +1,5 @@
+import '../css/componentes.css'
+
 import { useState } from "react"
 import {ResultadoForm} from "./InterpretFinal"
 
