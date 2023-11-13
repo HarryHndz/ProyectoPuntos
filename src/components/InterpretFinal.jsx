@@ -23,11 +23,7 @@ export const ResultadoForm = ()=>{
     }
 
     //
-    const [siguiente,setSiguiente] = useState(false)
 
-    const handleSiguiente = ()=>{
-        setSiguiente(true)
-    }
     return(
         <>
             <CuadroConteo onResultChange={handleResultChange}></CuadroConteo>
