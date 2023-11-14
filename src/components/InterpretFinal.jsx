@@ -8,31 +8,30 @@ export const ResultadoForm = ()=>{
     const [cuadro,setCuadro] = useState(0)
     const handleResultChange = (result) => {
         setCuadro(result);
-    }
-    //estado del formulario
-    const [formulario,setFormulario] = useState(0)
-    const handleResultChange2=(result2)=>{
-        setFormulario(result2)
+        seguir()
     }
 
-    //estado final
-    const [resultadoFin,setResultadoFin] =useState(0)
-    const FinalResul = ()=>{
-        const Pfa = cuadro *(0.65+(0.01*formulario))
-        setResultadoFin(Pfa)
+    //Estado de siguiente pagina
+    const [siguiente,setSiguiente] = useState(false)
+
+    const seguir = () => {
+        setSiguiente(true)
     }
 
-    //
-
+    
     return(
-        <>
-            <CuadroConteo onResultChange={handleResultChange}></CuadroConteo>
-            <Formulario onResultChange2={handleResultChange2}></Formulario>
-            <div>
-                <p>¿Deseas obtener el valor total?</p>
-                <button onClick={FinalResul}>calculalo perro</button>
-                <p>{resultadoFin}</p>
-            </div>
-        </>
+        
+        <div>
+            {siguiente ? (
+                <>
+                <Formulario /*onResultChange2={handleResultChange2}*/ x={cuadro}/>
+                </>
+            ) : (
+                <div>
+                    <CuadroConteo onResultChange={handleResultChange}  />
+                </div>
+            )}
+        </div>
+
     )
 }

@@ -19,7 +19,7 @@ export const PaginaIincio = ()=>{
             {mostrar ? (
             <>
             <ResultadoForm />
-            <button onClick={volverInicio}>Volver</button>
+            <button onClick={volverInicio}>Volver Inicio</button>
             </>
         ) : (
             <div>
