@@ -25,7 +25,8 @@ export const PaginaIincio = ()=>{
             {mostrar ? (
             <>
             <ResultadoForm />
-            <button onClick={volverInicio}>Volver Inicio</button>
+            <button className='inline-block rounded-md bg-indigo-600 px-8 py-3 text-center font-medium text-white 
+            hover:bg-indigo-700' onClick={volverInicio}>Volver Inicio</button>
             </>
         ) : (
             <div className="relative overflow-hidden bg-white">
@@ -43,7 +44,6 @@ export const PaginaIincio = ()=>{
                 </div>
                 <div>
                 <div className="mt-10">
-                    {/* Decorative image grid */}
                     <div
                     aria-hidden="true"
                     className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
