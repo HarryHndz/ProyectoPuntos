@@ -29,7 +29,18 @@ export const Formulario = (Cuadro) => {
     }
 
     return (
-        <div>
+        <>
+        <div className="flex justify-center m-10 text-5xl font-extrabold">
+            <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 
+            to-violet-500">Factor de ajuste de valor</h1>
+        </div>
+        <div className="flex justify-center">
+            <caption class="caption-bottom">responda las 14 preguntas indicadas y asignele valores desde 0 (no importante) a 5 (absolutamente esencial)</caption>
+        </div>
+            <div className="flex justify-center items-center min-h-screen">
+        
+        
+    
             {final ? (
                 <>
                 <Terminamos x = {FinalResul(sum2)}/>
@@ -55,62 +66,106 @@ export const Formulario = (Cuadro) => {
                     sumaPreguntas(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14)
                 }}>
                     <label>1. ¿El sistema requiere respaldo y recuperación confiables?</label>
-                    <input type="number" name="p1" />
                     <br />
+                    <input type="number" name="p1" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 
+                    focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>2. ¿Se requieren comunicaciones de datos especializadas para 
                     transferir información hacia o desde la aplicación? </label>
-                    <input type="number" name="p2" />
                     <br />
+                    <input type="number" name="p2" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>3. ¿Existen funciones de procesamiento distribuidas?</label>
-                    <input type="number" name="p3" />
                     <br />
+                    <input type="number" name="p3" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>4. ¿El desempeño es crucial?</label>
-                    <input type="number" name="p4" />
                     <br />
+                    <input type="number" name="p4" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>5. ¿El sistema correrá en un entorno operativo existente enormemente utilizado?</label>
-                    <input type="number" name="p5" />
                     <br />
+                    <input type="number" name="p5" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>6. ¿El sistema requiere entrada de datos en línea?</label>
-                    <input type="number" name="p6" />
                     <br />
+                    <input type="number" name="p6" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>7. ¿La entrada de datos en línea requiere que la 
                     transacción de entrada se construya sobre múltiples 
                     pantallas u operaciones?</label>
-                    <input type="number" name="p7" />
                     <br />
+                    <input type="number" name="p7" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>8. ¿Los ALI se actualizan en línea?</label>
-                    <input type="number" name="p8" />
                     <br />
+                    <input type="number" name="p8" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>9. ¿Las entradas, salidas, archivos o consultas son 
                     complejos?</label>
-                    <input type="number" name="p9" />
                     <br />
+                    <input type="number" name="p9" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>10. ¿El procesamiento interno es complejo?</label>
-                    <input type="number" name="p10" />
                     <br />
+                    <input type="number" name="p10" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>11. ¿El código se diseña para ser reutilizable?</label>
-                    <input type="number" name="p11" />
                     <br />
+                    <input type="number" name="p11" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
+                    <br />
+
                     <label>12. ¿La conversión y la instalación se incluyen en el 
                     diseñ?</label>
-                    <input type="number" name="p12" />
                     <br />
+                    <input type="number" name="p12" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>13. ¿El sistema se diseña para instalaciones múltiples en 
                     diferentes organizaciones?</label>
-                    <input type="number" name="p13" />
                     <br />
+                    <input type="number" name="p13" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+
                     <label>14. ¿La aplicación se diseña para facilitar el cambio y su 
                     uso por parte del usuario?</label>
-                    <input type="number" name="p14" />
-                <button type="submit">Continuar</button>
+                    <input type="number" name="p14" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                    placeholder-slate-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <br />
+                    <div className="flex justify-center">
+                        <button type="submit" className="w-1/2 inline-block rounded-md bg-indigo-600 px-8 py-3 
+                        text-center font-medium text-white hover:bg-indigo-700">Continuar</button>
+                    </div>
+                
                 </form>
-                <p>{sum2}</p>
                 
                 </>
                 
             )}
         </div>
-
+    </>
 
     )
     
