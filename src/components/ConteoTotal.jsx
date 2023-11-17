@@ -11,8 +11,6 @@ export const CuadroConteo = ({onResultChange})=>{
     
     }
 
-
-    
     return(
         <>
         <div className="flex justify-center items-center my-5">

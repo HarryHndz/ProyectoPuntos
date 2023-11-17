@@ -34,35 +34,40 @@ export const Terminamos = (Pfa) => {
 
     return (
 
-        <div className="w-3/4">
-            <div className="text-center"> 
-                <h1>Jornada Laboral</h1>
-            </div>
+        <div>
             {concluir ? (
                 <>
                 <MostrarResultados a = {calculoFinal(conteo)} />
                 </>
             ) : (
                 <>
-                <form onSubmit={ev=>{
-                    ev.preventDefault();
-                    const horas = Number(ev.target.horas.value)
-                    const personas = Number(ev.target.personas.value)
-                    contar(horas, personas)
-                }}>
-                    <label>Horas trabajadas al día</label>
-                    <input type="number" name="horas" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
-                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
-
-                    <label>No. De trabajadores</label>
-                    <input type="number" name="personas" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
-                    placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
-                <div className="flex justify-center">
-                    <button type="submit" className="m-10 inline-block rounded-md bg-indigo-600 px-8 py-3 text-center 
-                    font-medium text-white hover:bg-indigo-700">Finalizar</button>
+                <div className="flex justify-center m-10 text-5xl font-extrabold">
+                    <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 
+                    to-violet-500">Jornada Laboral</h1>
                 </div>
-                
-                </form>
+
+                <div className="flex justify-center items-center">
+
+                    <form onSubmit={ev=>{
+                        ev.preventDefault();
+                        const horas = Number(ev.target.horas.value)
+                        const personas = Number(ev.target.personas.value)
+                        contar(horas, personas)
+                    }}>
+                        <label>Horas trabajadas al día</label>
+                        <input type="number" name="horas" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                        placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+
+                        <label>No. De trabajadores</label>
+                        <input type="number" name="personas" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
+                        placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    <div className="flex justify-center">
+                        <button type="submit" className="m-10 inline-block rounded-md bg-indigo-600 px-8 py-3 text-center 
+                        font-medium text-white hover:bg-indigo-700">Finalizar</button>
+                    </div>
+                    
+                    </form>
+                </div>
                 </>
             )}
         </div>

@@ -25,8 +25,10 @@ export const PaginaIincio = ()=>{
             {mostrar ? (
             <>
             <ResultadoForm />
-            <button className='inline-block rounded-md bg-indigo-600 px-8 py-3 text-center font-medium text-white 
-            hover:bg-indigo-700' onClick={volverInicio}>Volver Inicio</button>
+            <div className='flex justify-center my-2'>
+                <button className='w-1/3 inline-block rounded-md bg-indigo-600 px-8 py-3 text-center font-medium text-white 
+                hover:bg-indigo-700' onClick={volverInicio}>Inicio</button>
+                </div>
             </>
         ) : (
             <div className="relative overflow-hidden bg-white">

@@ -29,24 +29,23 @@ export const Formulario = (Cuadro) => {
     }
 
     return (
-        <>
-        <div className="flex justify-center m-10 text-5xl font-extrabold">
-            <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 
-            to-violet-500">Factor de ajuste de valor</h1>
-        </div>
-        <div className="flex justify-center">
-            <caption class="caption-bottom">responda las 14 preguntas indicadas y asignele valores desde 0 (no importante) a 5 (absolutamente esencial)</caption>
-        </div>
-            <div className="flex justify-center items-center min-h-screen">
         
+            <div>
         
-    
             {final ? (
                 <>
                 <Terminamos x = {FinalResul(sum2)}/>
                 </>
             ) : (
                 <>
+                <div className="flex justify-center items-center my-5">
+                    <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r 
+            from-blue-900 to-violet-500 text-center">Factor de ajuste de valor</h1>
+                </div>
+                <div className="flex justify-center items-center my-5">
+                    <caption class="caption-bottom">responda las 14 preguntas indicadas y asignele valores desde 0 (no importante) a 5 (absolutamente esencial)</caption>
+                </div>
+                <div className="flex justify-center items-center my-5">
                 <form onSubmit={ev=>{
                     ev.preventDefault();
                     const p1 = Number(ev.target.p1.value)
@@ -161,11 +160,10 @@ export const Formulario = (Cuadro) => {
                 
                 </form>
                 
+                </div>
                 </>
-                
             )}
         </div>
-    </>
 
     )
     
