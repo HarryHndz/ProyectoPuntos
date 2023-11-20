@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MostrarResultados } from "./Fin.jsx";
-
+import { MostrarResultados } from "./Capsula2.jsx";
+import myImagen2 from '../img/hola2.jpg';
 export const Terminamos = (Pfa) => {
 
     const resulFin = Pfa.x
@@ -38,6 +38,16 @@ export const Terminamos = (Pfa) => {
             {concluir ? (
                 <>
                 <MostrarResultados a = {calculoFinal(conteo)} />
+                <div className="flex justify-center m-4">
+                    <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 
+                    to-violet-500 text-5xl font-extrabold">Gracias por usar nuestro software </h1>
+                </div>
+                <div className="flex justify-center m-4">
+                    <p>esperamos que haya sido de utilidad <br />Vuelva al inicio si quiere realizar otras pruebas</p>
+                </div>
+                <div className="flex justify-center m-4">
+                    <img src={myImagen2} className="object-cover h-48 w-96"/>
+                    </div>
                 </>
             ) : (
                 <>
@@ -49,9 +59,13 @@ export const Terminamos = (Pfa) => {
                 <div className="flex justify-center items-center">
 
                     <form onSubmit={ev=>{
-                        ev.preventDefault();
+                        ev.preventDefault()
                         const horas = Number(ev.target.horas.value)
                         const personas = Number(ev.target.personas.value)
+                        if (!horas || !personas) {
+                            alert('Llene todo los campos')
+                            return
+                        }
                         contar(horas, personas)
                     }}>
                         <label>Horas trabajadas al día</label>

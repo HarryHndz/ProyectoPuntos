@@ -1,8 +1,9 @@
 import { CuadroConteo } from "./ConteoTotal.jsx";
 import { Formulario } from "./AjusteValor.jsx";
 import { useState } from "react";
+import { BotonInicio } from "./BotonHome.jsx";
 
-export const ResultadoForm = ()=>{
+export const ResultadoForm = ({volverInicio})=>{
 
     //estado del cuadro
     const [cuadro,setCuadro] = useState(0)
@@ -24,11 +25,13 @@ export const ResultadoForm = ()=>{
         <div>
             {siguiente ? (
                 <>
-                <Formulario /*onResultChange2={handleResultChange2}*/ x={cuadro}/>
+                <Formulario x={cuadro} />
+                <BotonInicio volverInicio={volverInicio}></BotonInicio>
                 </>
             ) : (
                 <div>
                     <CuadroConteo onResultChange={handleResultChange}  />
+                    <BotonInicio volverInicio={volverInicio}></BotonInicio>
                 </div>
             )}
         </div>
