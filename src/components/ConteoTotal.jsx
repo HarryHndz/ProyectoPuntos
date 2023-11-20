@@ -1,8 +1,9 @@
 import { useState } from "react"
-
+import { Alert, Space } from 'antd';
 
 export const CuadroConteo = ({onResultChange})=>{
     const [total, setTotal] = useState(0)
+    const [alertMessage, setAlertMessage] = useState(null);
 
     const calcularConteo = (ee,se,ce,ali,aie)=>{
         const sumaConteo = ee+se+ce+ali+aie 
@@ -30,7 +31,7 @@ export const CuadroConteo = ({onResultChange})=>{
                 const ArchLEX = Number(ev.target.conteo_aie.value) * Number(ev.target.radio_aie.value)
             
                 if (!EntradaEx || !salidaEx || !ConsultaEx || !ArchLin || ! ArchLEX) {
-                    alert('Llene todo los campos')
+                    setAlertMessage(`Porfavor llene todo los campos de la tabla`)
                     return
                 }
                 calcularConteo(EntradaEx,salidaEx,ConsultaEx,ArchLin,ArchLEX)
@@ -86,7 +87,18 @@ export const CuadroConteo = ({onResultChange})=>{
                         text-center font-medium text-white hover:bg-indigo-700">Continuar</button>
                 </div>
             </form>
+            
         </div>
+        {alertMessage && (
+            <Space direction="vertical" style={{ width: '100%' }}>
+                <Alert
+                message={alertMessage}
+                type="warning"
+                closable
+                onClose={() => setAlertMessage(null)}
+                />
+            </Space>
+        )}
         </>
     )
 

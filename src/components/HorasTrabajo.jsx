@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { MostrarResultados } from "./Capsula2.jsx";
 import myImagen2 from '../img/hola2.jpg';
+import { Alert, Space } from 'antd';
 export const Terminamos = (Pfa) => {
 
     const resulFin = Pfa.x
-
+    const [alertMessage, setAlertMessage] = useState(null);
     const [conteo, setConteo] = useState(0)
     const contar = (horas, personas) => {
         const totalDatos = {
@@ -62,8 +63,15 @@ export const Terminamos = (Pfa) => {
                         ev.preventDefault()
                         const horas = Number(ev.target.horas.value)
                         const personas = Number(ev.target.personas.value)
-                        if (!horas || !personas) {
-                            alert('Llene todo los campos')
+                        if (!personas && !horas) {
+                            setAlertMessage(`los campos trabajadores y horas estan vacios `)
+                            return
+                        
+                        }else if(!personas){
+                            setAlertMessage(`el campo trabajadores esta vacio `)
+                            return
+                        }else if(!horas){
+                            setAlertMessage(`el campo horas esta vacio `)
                             return
                         }
                         contar(horas, personas)
@@ -81,7 +89,18 @@ export const Terminamos = (Pfa) => {
                     </div>
                     
                     </form>
+                    
                 </div>
+                {alertMessage && (
+                        <Space direction="vertical" style={{ width: '100%' }}>
+                            <Alert
+                                message={alertMessage}
+                                type="warning"
+                                closable
+                                onClose={() => setAlertMessage(null)}
+                            />
+                        </Space>
+                    )}
                 </>
             )}
         </div>

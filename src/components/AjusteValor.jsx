@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Terminamos } from "./HorasTrabajo.jsx";
-
+import { Alert, Space } from 'antd';
 export const Formulario = (Cuadro) => {
     
     const valAnte = Cuadro.x
 
     const [sum2,setSum2] = useState(0)
+    const [alertMessage, setAlertMessage] = useState(null);
+
 
     const FinalResul = (sumaFinal2)=>{
         const Pfa = valAnte *(0.65+(0.01*sumaFinal2))
@@ -28,6 +30,7 @@ export const Formulario = (Cuadro) => {
                 </>
             ) : (
                 <>
+                
                 <div className="flex justify-center items-center my-5">
                     <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r 
             from-blue-900 to-violet-500 text-center">Factor de ajuste de valor</h1>
@@ -38,14 +41,20 @@ export const Formulario = (Cuadro) => {
                 <div className="flex justify-center items-center my-5">
                 <form onSubmit={ev => {
                     ev.preventDefault();
+                    const preguntasVacias = [];
                     let total = 0
                     for (let i = 1; i <= 14; i++) {
                         const value = Number(ev.target[`p${i}`].value)
                         if (!value) {
-                            alert(`La pregunta ${i} está vacía`)
-                            return;
+                            preguntasVacias.push(`Pregunta ${i}`);
+                            
                         }
+                        
                         total += value
+                    }
+                    if (preguntasVacias.length > 0) {
+                        setAlertMessage(`Los siguientes campos están vacíos: ${preguntasVacias.join(', ')}`)
+                        return
                     }
                     setSum2(total)
                     Terminar()
@@ -140,13 +149,26 @@ export const Formulario = (Cuadro) => {
                     <input type="number" min="0" max="5" name="p14" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 
                     placeholder-slate-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
                     <br />
+                    {alertMessage && (
+                        <Space direction="vertical" style={{ width: '100%' }}>
+                            <Alert
+                                message={alertMessage}
+                                type="warning"
+                                closable
+                                onClose={() => setAlertMessage(null)}
+                            />
+                        </Space>
+                    )}
                     <div className="flex justify-center">
                         <button type="submit" className="w-1/2 inline-block rounded-md bg-indigo-600 px-8 py-3 
                         text-center font-medium text-white hover:bg-indigo-700">Continuar</button>
                     </div>
+
+
                 
                 </form>
                 </div>
+
                 </>
             )}
         </div>
