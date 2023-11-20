@@ -37,7 +37,7 @@ export const PaginaIincio = ()=>{
                 <p className="mt-4 text-xl text-gray-500">
                     Bienvenido aquí podrás conocer el tamaño de la funcionalidad de tu software
                     ¿Cómo calculamos o expresamos este resultado?
-                    Se calcula a través de una suma ponderada de las características del producto
+                    Se calcula a través de una suma ponderada de las características del producto.
                 </p>
                 </div>
                 <div>

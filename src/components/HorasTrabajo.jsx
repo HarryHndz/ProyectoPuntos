@@ -44,7 +44,7 @@ export const Terminamos = (Pfa) => {
                     to-violet-500 text-5xl font-extrabold">Gracias por usar nuestro software </h1>
                 </div>
                 <div className="flex justify-center m-4">
-                    <p>esperamos que haya sido de utilidad <br />Vuelva al inicio si quiere realizar otras pruebas</p>
+                    <p>Esperamos que haya sido de utilidad. <br />Vuelva al inicio si quiere realizar otras pruebas.</p>
                 </div>
                 <div className="flex justify-center m-4">
                     <img src={myImagen2} className="object-cover h-48 w-96"/>

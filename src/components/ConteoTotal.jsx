@@ -31,7 +31,7 @@ export const CuadroConteo = ({onResultChange})=>{
                 const ArchLEX = Number(ev.target.conteo_aie.value) * Number(ev.target.radio_aie.value)
             
                 if (!EntradaEx || !salidaEx || !ConsultaEx || !ArchLin || ! ArchLEX) {
-                    setAlertMessage(`Porfavor llene todo los campos de la tabla`)
+                    setAlertMessage(`Por favor llene todos los campos de la tabla`)
                     return
                 }
                 calcularConteo(EntradaEx,salidaEx,ConsultaEx,ArchLin,ArchLEX)

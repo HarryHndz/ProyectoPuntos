@@ -36,7 +36,7 @@ export const Formulario = (Cuadro) => {
             from-blue-900 to-violet-500 text-center">Factor de ajuste de valor</h1>
                 </div>
                 <div className="flex justify-center items-center my-5">
-                    <caption class="caption-bottom">responda las 14 preguntas indicadas y asignele valores desde 0 (no importante) a 5 (absolutamente esencial)</caption>
+                    <caption class="caption-bottom">Responda las 14 preguntas indicadas y establezca un valor a cada una desde 0 (no importante) a 5 (absolutamente esencial)</caption>
                 </div>
                 <div className="flex justify-center items-center my-5">
                 <form onSubmit={ev => {
@@ -45,7 +45,7 @@ export const Formulario = (Cuadro) => {
                     let total = 0
                     for (let i = 1; i <= 14; i++) {
                         const value = Number(ev.target[`p${i}`].value)
-                        if (!value) {
+                        if (value < 0 && value > 5) {
                             preguntasVacias.push(`Pregunta ${i}`);
                             
                         }
